@@ -50,3 +50,19 @@ tasks {
         options.release.set(javaVersion)
     }
 }
+
+bukkit {
+    name = "Template"
+    apiVersion = "1.18"
+    authors = listOf(
+        "Jilence",
+    )
+    commands {
+
+    }
+    main = "$group.template.Template"
+    version = getVersion().toString()
+    libraries = listOf(
+        "net.axay:kspigot:1.18.2",
+    )
+}
