@@ -12,7 +12,7 @@ object Colors {
     fun pluginColor() = TextColor.fromHexString(color)
 
     val BLUE = TextColor.fromHexString("#4079ff")
-    val RED = TextColor.fromHexString("#b50000")
+    val RED = TextColor.fromHexString("#FF5555")
     val YELLOW = TextColor.fromHexString("#fff200")
     val ORANGE = TextColor.fromHexString("#ffa200")
     val DARK_GRAY = TextColor.fromHexString("#3b3b3b")
