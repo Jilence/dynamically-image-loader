@@ -1,4 +1,4 @@
-rootProject.name = "minecraft-template"
+rootProject.name = "kotlin-gradle-template"
 
 pluginManagement {
     repositories {
