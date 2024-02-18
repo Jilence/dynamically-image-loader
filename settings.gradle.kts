@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-gradle-template"
+rootProject.name = "dynamically-image-loader"
 
 pluginManagement {
     repositories {

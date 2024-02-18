@@ -1,9 +1,7 @@
-import org.jetbrains.kotlin.scripting.definitions.StandardScriptDefinition.template
+val javaVersion = 17
 
-val javaVersion = 17 // Minecraft 1.18 requires Java 17
-
-val groupId = "template"
-val main = "TemplateKt"
+val groupId = "loader"
+val main = "IconBuilderKt"
 
 plugins {
     kotlin("jvm") version "1.6.21"
@@ -16,6 +14,12 @@ version = "1.0.0"
 repositories {
     mavenCentral()
     mavenLocal()
+
+    // PaperMC repository
+    maven("https://repo.codemc.io/repository/maven-snapshots/")
+
+    // PaperMC repository
+    maven("https://repo.papermc.io/repository/maven-public")
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
@@ -25,7 +29,7 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
 }
 
 dependencies {
-
+    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
 }
 
 tasks {
