@@ -15,6 +15,7 @@ class IconBuilder {
 
     private var username: String? = null
     private var image: BufferedImage? = null
+    private var ascent: Int = 5
 
     /**
      * Creates a string representation of an image using icons.
@@ -42,11 +43,11 @@ class IconBuilder {
      * @param image The image to represent.
      * @return A Component representation of the image.
      */
-    fun createIconRepresentationAsComponent(image: BufferedImage): Component {
+    fun createIconRepresentationAsComponent(image: BufferedImage, ascent: Int = 5): Component {
         var component = Component.empty()
         for (y in 0 until image.height) {
             for (x in 0 until image.width) {
-                val pixel = Pixel(image, x, y, 5)
+                val pixel = Pixel(image, x, y, ascent)
                 val icon = pixel.getIcon()
                 val pixelColor = TextColor.color(pixel.getColor().rgb)
 
@@ -71,10 +72,14 @@ class IconBuilder {
             iconBuilder.image = SkinLoader().fetchPlayerSkin(username)?.let { ImageProcessor().extractHead(it) }
         }
 
-        fun build(): String = iconBuilder.image?.let { iconBuilder.createIconRepresentation(it) } ?: error("Error: No image set")
+        fun withAscent(ascent: Int) = apply {
+            iconBuilder.ascent = ascent
+        }
+
+        fun build(): String = iconBuilder.image?.let { iconBuilder.createIconRepresentation(it, iconBuilder.ascent) } ?: error("Error: No image set")
 
         fun buildAsComponent(): Component {
-            return iconBuilder.image?.let { iconBuilder.createIconRepresentationAsComponent(it) } ?: error("Error: No image set")
+            return iconBuilder.image?.let { iconBuilder.createIconRepresentationAsComponent(it, iconBuilder.ascent) } ?: error("Error: No image set")
         }
     }
 
