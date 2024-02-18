@@ -55,6 +55,12 @@ val icon = IconBuilder.Builder()
 
 You can place the component or string wherever you desire!
 
+```kotlin
+player.sendMessage(icon)
+
+player.sendMessage(icon.append(Component.text("Hello Player!")))
+```
+
 **IMPORTANT:** :warning: To embed your player head into the scoreboard, ensure that the scoreboard doesn't have a character limit. I utilized [KTGui](https://github.com/Matt-MX/KtPaperGui) for testing purposes. Feel free to use any tool or method you prefer!
 
 
