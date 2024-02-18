@@ -25,7 +25,7 @@ The library allows you to dynamically load avatars (the Player Head) into the Mi
 #### Gradle Kotlin DSL
 
 ```kotlin
-implementation("com.github.Jilence:dynamically-image-loader:v1.0.5")
+implementation("com.github.Jilence:dynamically-image-loader:v1.0.6")
 ```
 
 ### Repository
@@ -42,6 +42,7 @@ maven("https://jitpack.io")
 ```kotlin
 val icon = IconBuilder.Builder()
             .withUsername("Player Name")
+            .withAscent(10)
             .buildAsComponent()
 ```
 
@@ -50,6 +51,7 @@ val icon = IconBuilder.Builder()
 ```kotlin
 val icon = IconBuilder.Builder()
             .withUsername("Player Name")
+            .withAscent(5)
             .build()
 ```
 
